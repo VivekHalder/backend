@@ -1,18 +1,12 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "contains all of backend notes.",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "backend",
-    "node.js",
-    "mongoose",
-    "express.js",
-    "MERN"
-  ],
+  "keywords": [],
   "author": "",
   "license": "ISC"
 }
