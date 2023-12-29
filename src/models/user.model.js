@@ -39,7 +39,7 @@ const userSchema = new Schema({
     ],
     password: {
         type: String, //will get encrypted
-        required: [true, 'Password is required']
+        required: [true, 'Password is required.']
     },
     refreshToken: {
         type: String
@@ -52,6 +52,7 @@ userSchema.pre("save", async function(next){
     if(!this.isModified("password")) return next();
         
     this.password = await bcrypt.hash(this.password, 10);
+    //console.log("HI LETS HASH IT Password :", this.password);
     next();
 });
 
