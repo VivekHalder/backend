@@ -21,4 +21,17 @@ app.use(express.static("public"));
 //we can put SECURED cookies in the user's server.
 app.use(cookieParser());
 
+
+
+//routes import
+
+//we can give our customized name only if we have exported it as default.
+import userRouter from './routes/user.routes.js';
+
+//routes declaration
+
+//https://localhost:PORT/api/v1/users now the control passes to user.routes.js
+app.use("/api/v1/users", userRouter);
+
+
 export { app };
