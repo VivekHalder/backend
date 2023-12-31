@@ -29,4 +29,26 @@ const uploadOnCloudinary = async (localFilePath) => {
     }
 };
 
-export { uploadOnCloudinary };
+const deleteFromCloudinary = async ( imagePublicId ) => {
+    try {
+        if(!imagePublicId){
+            console.log("Public ID of the image couldnot be found.");
+            return null;
+        }
+
+        const response = await cloudinary.uploader.destroy( imagePublicId, ( error, result ) => {
+            if( error ){
+                console.error(" Error occured in deletiing the image. Error ", error?.message );
+            } else {
+                console.log(`Image deleted successfully.`);
+            }
+        } );
+
+        return response;
+
+    } catch (error) {
+        console.error("Error occured while deleting image from cloudinary. Error ", error?.message );
+    }
+};
+
+export { uploadOnCloudinary, deleteFromCloudinary };
